@@ -9,7 +9,7 @@ Created on Fri May  4 19:16:32 2018
 import numpy as np
 
 
-
+# define a function to count the # of inversions in the split case 
 def merge_split_cnt(A,B):
        
        n1 = A.shape[0]
@@ -29,7 +29,7 @@ def merge_split_cnt(A,B):
 
 
 
-
+# define a function to count the # of inversions
 def count_split(A):
        n = A.shape[0]
        if n == 1:
@@ -45,22 +45,21 @@ def count_split(A):
        return x+y+z
 
 
-
+#######
+# Some text case
 z= np.array([2,3,1,5,4])
 count_split(z)
+#######
 
 
-
-
+######
+# To handle the case in homework
 text_file = open("IntegerArray.txt","r")
 lines = text_file.readlines()
 
 
 z = [line.split('\n') for line in lines]
 arr = np.array([int(e[0]) for e in z])
-
-
-
 
 count_split(arr)
 
